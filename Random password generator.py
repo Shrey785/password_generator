@@ -1,15 +1,17 @@
+#creating a program to generate random password
 import random
 from tkinter import *
 import pyperclip
 import string
 
 def generator():
+    #so using ascii to get all values like small letters , numbers ,symbols etc.
     small = string.ascii_lowercase
     capitals = string.ascii_uppercase
     numbers=string.digits
     special=string.punctuation
 
-    all = small + capitals + numbers + special
+    all = small + capitals + numbers + special #adding all together so that when executing can generate random combinations
     password_length = int(length_Box.get())
     
     password = random.sample(all, password_length)
@@ -45,5 +47,4 @@ passwordField.grid()
 copyButton=Button(root,text='Copy',font=Font,command=copy)
 copyButton.grid(pady=5)
 
-    
 root.mainloop()
